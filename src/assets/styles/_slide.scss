@@ -38,11 +38,21 @@
         right: 0px;
         top: 50%;
         transform: translate(-50%, -50%);
+        @media(max-width: 750px){
+            img{
+                height: 50px;
+            }
+        }
     }
     .previous{
         position: absolute;
         left: 50px;
         top: 50%;
         transform: translate(-50%, -50%);
+        @media(max-width: 750px){
+            img{
+                height: 50px;
+            }
+        }
     }
 }
