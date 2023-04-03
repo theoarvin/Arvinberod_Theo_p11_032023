@@ -8,7 +8,6 @@ const Slide = ({ images }) => {
 
   useEffect(() => {
     const slide1 = document.querySelector(`.slide${count}`);
-    console.log(slide1);
     slide1.classList.add("active");
   });
 
@@ -31,16 +30,20 @@ const Slide = ({ images }) => {
     }
     slide.classList.remove("active");
   };
-  
+
   return (
     <div className="slideBlock">
       {dataImage.map((i, index) => (
         <div className={`slide slide${index}`} key={index}>
           <img src={i} alt="slide" />
-          {dataImage.length > 1 && <span className="count-slide">{index + 1}/{dataImage.length} </span>}
+          {dataImage.length > 1 && (
+            <span className="count-slide">
+              {index + 1}/{dataImage.length}{" "}
+            </span>
+          )}
         </div>
       ))}
-      
+
       {dataImage.length > 1 && (
         <>
           <span className="previous" onClick={handleCountPrevious}>
@@ -51,7 +54,6 @@ const Slide = ({ images }) => {
           </span>
         </>
       )}
-     
     </div>
   );
 };
